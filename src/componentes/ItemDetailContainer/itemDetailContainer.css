@@ -1,0 +1,89 @@
+.loading {
+  margin: auto;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+
+/* .containerDetail {
+  background: #ffffff;
+  background: -webkit-linear-gradient(to right, #525252, #ffffff);
+  background: linear-gradient(to right, 25252, #ffffff);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 100%;
+  margin: 50px auto;
+  box-shadow: 2px 4px 8px 2px #868686;
+  border-radius: 5px;
+} */
+
+.details {
+  margin: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+
+
+.imageDetail {
+  width: 30%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.textDetails {
+  width: 30%;
+  padding: 10px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.categoryProduct.p {
+  text-decoration: overline underline 2px solid;
+}
+
+.nameProduct {
+  font-size: 20px;
+}
+
+.valueProduct {
+  font-size: 25px;
+}
+
+.resumen p {
+  font-weight: bold;
+}
+
+.year p {
+  font-weight: bold;
+}
+
+span {
+  font-weight: 400;
+}
+
+.stock p {
+  font-weight: bold;
+}
+
+span {
+  font-weight: 400;
+}
+
+.buttons {
+  height: auto;
+}

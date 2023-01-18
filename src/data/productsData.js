@@ -1,6 +1,6 @@
-export default [
+const productos = [
     {
-      id: 1,
+      id: "1",
       title: "El Viejo y El Mar",
       author: "Ernest Hemingway",
       year: 1999,
@@ -11,7 +11,7 @@ export default [
       resumen: "Santiago es un viejo pescador cubano que ya lleva ochenta y cuatro días sin coger un solo pescado. Sólo tiene un amigo, el joven Manolin su aprendiz, a quien sus padres sin embargo fuerzan a que dejen de ir con el viejo Santiago porque dicen: ya no tiene suerte.Sin embargo Manolin sigue ayudando a su amigo Santiago todos los días cuando llega de su infructuosa pesca.En el día que hace ochenta y cinco Santiago sale con su pequeño esquife y se adentra en el mar, alejándose de las aguas costeras. Entrando ya en la corriente del Golfo, prepara los sedales y tras haber conseguido carnaza los deja que desciendan casi cien brazas. A mediodía siente que ha picado un gran pez y está seguro de que es un hermoso pez espada. Usando de la experiencia de toda una vida comienza una lucha entre Santiago y el pez que dura cerca de tres días.Santiago es la personificación de la lucha contra el fracaso. Nunca se da por vencido. Deberíamos aprender de el."
     },
     {
-      id: 2,
+      id: "2",
       title: "El Nombre de la Rosa",
       author: "Umberto Eco",
       year: 2001,
@@ -23,11 +23,11 @@ export default [
     },
 
     {
-      id: 3,
+      id: "3",
       title: "El Arte De La Guerra",
       author: "Sun Tzu",
       year: 1990,
-      genre: "Estretégia",
+      genre: "Estratégia",
       price: 2700,
       stock: 2,
       imgUrl: "../images/el-arte-de-la-guerra.jpg",
@@ -35,7 +35,7 @@ export default [
     },
 
     {
-      id: 4,
+      id: "4",
       title: "El Alquimista",
       author: "Paulo Coelho",
       year: 2002,
@@ -47,4 +47,42 @@ export default [
     }
 
   ];
+
+  function getItems(){
+    return new Promise((resolve)=>{
+        setTimeout(()=>{
+            resolve(productos)
+        }, 1000);
+    })
+}
+
+export function getProductsDetails(itemid){
+    let productosArray = productos.find(idProduct  =>{
+        
+      return  (idProduct.id === itemid)
+
+    })
+    console.log(productosArray)
+
+    return new Promise((resolve)=>{
+        setTimeout(()=>{
+            resolve(productosArray)
+        }, 2000)
+    })
+}
+
+export function getProductsCategory(categoryid){
+    let productosArray = productos.find(categoryProduct => {
+        return (categoryProduct.genre === categoryid)
+    })
+
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(productosArray)
+        }, 2000)
+    })
+}
+
+
+export default getItems;
 

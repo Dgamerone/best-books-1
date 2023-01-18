@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import CartWidget from "./CartWidget";
+import CartWidget from "./CartWidget2/CartWidget";
 
 
 const Navbar = () => {
@@ -10,7 +10,7 @@ const Navbar = () => {
         <Link className="navbar-brand active" to="logo">
           Best Books
         </Link>
-        <button
+        <buttons
           className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
@@ -20,7 +20,7 @@ const Navbar = () => {
           aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon"></span>
-        </button>
+        </buttons>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav">
             <Link className="nav-link active" aria-current="page" to="/">

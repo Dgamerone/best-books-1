@@ -1,86 +1,136 @@
-/******** Items Detail ******/
+.containerCard {
+  padding: 20px 15px;
+  display: flex;
+  justify-content: space-around;
+  width: 60%;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 5px;
+  min-width: 300px;
+  max-width: 350px;
+}
 
-.item-detail {
-    background-color: rgb(190, 189, 189);
-    margin: 10px;
-    padding: 20px;
-    width: 500px;
-    border-radius: 10px;
-    border: 1px solid #ddd;
-  }
-  
-  /******** Items List ******/
-  
-  .items-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-  }
-  
-  /****** Item  box *********/
-  
-  .item-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #fff;
-    margin: 10px;
-    padding: 20px;
-    width: 300px;
-    border-radius: 10px;
-    border: 1px solid #ddd;
-  }
+.card {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 15px;
+  padding-bottom: 15px;
+  background-color: #fff;
+  box-shadow: -1px 5px 10px 1px rgba(0, 0, 0, 0.75);
+  overflow: hidden;
+}
 
-  .item-title {
-    margin: 10px;
-    padding: 10px;
-    font-size: 16px;
-    font-weight: 700;
-  }
-  
-  .item-quantity {
-    color: #fff;
-    background-color: #f0ad4e;
-    display: flex;
-    justify-content: center;
-    border-radius: 20px;
-    max-width: 30px;
-    position: relative;
-    left: 40px;
-  }
-  
-  .item-price {
-    color: gray;
-  }
-  
-  .item-add-button {
-    background-color: #5cb85c;
-    border-radius: 5px;
-    color: #fff;
-    border: none;
-    font-size: 11px;
-    cursor: pointer;
-    height: 20px;
-  }
-  
-  .item-minus-button {
-    background-color: #d9534f;
-    border-radius: 5px;
-    color: #fff;
-    border: none;
-    font-size: 11px;
-    cursor: pointer;
-  }
-  
-  .item-plus-button {
-    padding: 5px;
-    margin: 10px;
-    background-color: #337ab7;
-    border-radius: 5px;
-    color: #fff;
-    border: none;
-    font-size: 11px;
-    cursor: pointer;
-  }
+.corazonContainer {
+  background: #036df7;
+  background: -webkit-linear-gradient(to right, #010007, #e6e6c9);
+  background: linear-gradient(to right, #01000c, #ffffff);
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  padding: 10px;
+}
+
+.Corazon {
+  border-radius: 100px;
+  height: 30px;
+  width: 30px;
+  border-radius: 100px;
+  height: 30px;
+  width: 30px;
+  border: 2px solid #8a8987;
+  background-color: #fafafa;
+  color: rgb(20, 20, 20);
+}
+
+.Click {
+  border-radius: 100px;
+  height: 30px;
+  width: 30px;
+  border-radius: 100px;
+  height: 30px;
+  width: 30px;
+  background-color: #fafafa;
+  color: red;
+  border: 2px solid #df0a1c;
+}
+
+.containerImgText {
+  width: 100%;
+  background: #f90404;
+  background: -webkit-linear-gradient(to right, #d4d3dd, #e6e6c9);
+  background: linear-gradient(to right, #d4d3dd, #e6e6c9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 15px;
+}
+
+.titleCard {
+  width: 100%;
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+h2 {
+  color: #000000;
+}
+
+.imgCard {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+img {
+  width: 100%;
+  transition: 1s ease-in-out;
+}
+
+.containerDetailsCard {
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.price {
+  margin: 5px auto;
+}
+
+.description {
+  margin: 5px auto;
+}
+
+h4 {
+  text-align: center;
+  width: 100%;
+  font-weight: 100;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.buttonSeeMoreCard {
+  width: 100%;
+  margin: 5px auto;
+  border: hidden;
+}
+
+.linkbutton {
+  text-decoration: none;
+}
+
+.card:hover img {
+  transform: scale(1.1);
+}
+
+@media screen and (max) {
+}

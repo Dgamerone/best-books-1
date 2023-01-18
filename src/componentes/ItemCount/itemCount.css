@@ -1,0 +1,89 @@
+.buttonAdd {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100px;
+  padding: 5px;
+  flex-direction: column;
+}
+
+.buttonSuma {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 20px;
+  padding: 5px;
+}
+
+.buttonMenos {
+  border-radius: 100px;
+  background: #a10202;
+  /* background: -webkit-linear-gradient(to right, #f3ef05, #FFE000);
+            background: linear-gradient(to right, #faf600, #FFE000); */
+  width: 35px;
+  height: 35px;
+  border: hidden;
+  font-weight: bold;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contador {
+  border: 1px solid black;
+  width: 50%;
+  height: 30px;
+  display: flex;
+  border-radius: 100px;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.buttonMas {
+  border-radius: 100px;
+  background: #018f2b;
+  /* background: -webkit-linear-gradient(to right, #f3ef05, #FFE000);
+            background: linear-gradient(to right, #faf600, #FFE000); */
+  width: 35px;
+  height: 35px;
+  border: hidden;
+  font-weight: bold;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.compra {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
+
+button {
+  width: 80%;
+  background: #0575e6;
+  background: -webkit-linear-gradient(to right, #021b79, #0575e6);
+  background: linear-gradient(to right, #021b79, #0575e6);
+  border-radius: 5px;
+  height: 30px;
+  border: hidden;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: sans-serif;
+  color: #d6d4d4;
+  text-shadow: -1px 1px 10px #060606d5;
+  text-decoration: none;
+}
+
+button:hover {
+  cursor: pointer;
+  background: #6441a5;
+  background: -webkit-linear-gradient(to right, #2a0845, #6441a5);
+  background: linear-gradient(to right, #2a0845, #6441a5);
+}

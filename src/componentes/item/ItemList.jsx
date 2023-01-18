@@ -1,13 +1,12 @@
-import React from 'react'
-import storeItems from "../../data/products.json"
-import { Item } from "../../componentes/item/Item"
+import "../item/itemList.css"
+import Item from "../item/Item"
 
-export const ItemList = () => {
-  return (
-    <div className="items-list">
-      {storeItems.map((product, idx) => {
-        return <Item key={product.id} {...product} />;
-      })}
-    </div>
-  );
-};
+const ItemList = ({ products }) => {
+    return (
+        <div className='itemList'>
+            {products.map(prod => <Item key={prod.id} {...prod}  />)}
+        </div>
+    )
+}
+
+export default ItemList
