@@ -1,7 +1,7 @@
 import React from 'react'
-import banner_central from '../imagenes_banner/banner_central.jpg'
-import banner_1 from '../imagenes_banner/banner_1.png'
-import banner_2 from '../imagenes_banner/banner_2.png'
+import banner_central from '../../imagenes_banner/banner_central.jpg'
+import banner_1 from '../../imagenes_banner/banner_1.png'
+import banner_2 from '../../imagenes_banner/banner_2.png'
 
 
 export default function Banner() {

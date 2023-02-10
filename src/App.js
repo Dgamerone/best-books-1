@@ -1,15 +1,12 @@
 import "./App.css";
-import { Route, Routes, BrowserRouter} from "react-router-dom";
-import Navbar from "./componentes/Navbar";
-import Libros from "./paginas/Libros";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
+import Navbar from "./componentes/navBar/Navbar";
 import Contacto from "./paginas/Contacto";
-import Carrito from "./paginas/Carrito";
-import Saludo from "./componentes/ItemListContainer/Saludo";
-import Banner from "./componentes/Banner";
-import {Footer} from "./componentes/Footer"
-import ItemListContainer from "./componentes/ItemListContainer/ItemListContainer"
-import ItemDetailContainer from "./componentes/ItemDetailContainer/ItemDetailCointainer"
-
+import Saludo from "./componentes/itemListContainer/Saludo";
+import Banner from "./componentes/banner/Banner";
+import { Footer } from "./componentes/footer/Footer.jsx";
+import ItemListContainer from "./componentes/itemListContainer/ItemListContainer";
+import ItemDetailContainer from "./componentes/itemDetailContainer/ItemDetailCointainer";
 
 function App() {
   const saludos = {
@@ -29,9 +26,8 @@ function App() {
           <Route path="/" element={<ItemListContainer />} />
           <Route path="/item/:itemid" element={<ItemDetailContainer />} />
           <Route path="/category/:categoryid" element={<ItemListContainer />} />
-          <Route path="/libros" element={<Libros />} />
           <Route path="/contacto" element={<Contacto />} />
-          <Route path="/carrito" element={<Carrito />} />
+          {/* <Route path="/cart" element={<Carrito />} /> */}
         </Routes>
       </BrowserRouter>
 

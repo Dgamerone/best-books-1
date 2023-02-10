@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import './itemDetailContainer.css';
-import ItemCount from '../ItemCount/ItemCount';
+import ItemCount from '../itemCount/ItemCount';
 import { getProductsDetails } from "../../data/productsData.js";
 import { useParams } from 'react-router-dom';
 import swal from "sweetalert";
@@ -46,7 +46,7 @@ export default function ItemDetailContainer() {
                         <h6>{productos.author}</h6>
                     </div>
                     <div className='categoryProduct'>
-                        <spam>{productos.genre}</spam>
+                        <spam>{productos.category}</spam>
                     </div>
                     <div className='year'>
                         <p>Año</p>

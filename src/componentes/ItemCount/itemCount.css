@@ -46,8 +46,6 @@
 .buttonMas {
   border-radius: 100px;
   background: #018f2b;
-  /* background: -webkit-linear-gradient(to right, #f3ef05, #FFE000);
-            background: linear-gradient(to right, #faf600, #FFE000); */
   width: 35px;
   height: 35px;
   border: hidden;
@@ -67,23 +65,18 @@
 
 button {
   width: 80%;
-  background: #0575e6;
-  background: -webkit-linear-gradient(to right, #021b79, #0575e6);
-  background: linear-gradient(to right, #021b79, #0575e6);
-  border-radius: 5px;
+  background: #00a6ff;
+  border-radius: 10px;
   height: 30px;
   border: hidden;
   font-size: 18px;
   font-weight: 600;
   font-family: sans-serif;
-  color: #d6d4d4;
-  text-shadow: -1px 1px 10px #060606d5;
+  color: white;
   text-decoration: none;
 }
 
 button:hover {
   cursor: pointer;
-  background: #6441a5;
-  background: -webkit-linear-gradient(to right, #2a0845, #6441a5);
-  background: linear-gradient(to right, #2a0845, #6441a5);
+  background: #5900ff;
 }

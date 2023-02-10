@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 
-export default function ItemList({ title, author, year, price, genre, id, imgUrl, resumen, stock }) {
+export default function ItemList({ title, author, year, price, category, id, imgUrl, resumen, stock }) {
 
 
     const [buttonChange, setButtonChange] = useState("Corazon");
@@ -46,7 +46,7 @@ let itemid = `/item/${id}`
                         <h5>Año {year}</h5>
                     </div>
                     <div className="description">
-                        <h6>{genre}</h6>
+                        <h6>{category}</h6>
                     </div>
                     <div className="buttonSeeMoreCard">
                         <Link className="linkbutton" to={itemid}>

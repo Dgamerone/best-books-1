@@ -4,7 +4,7 @@
       "title": "El Viejo y El Mar",
       "author": "Ernest Hemingway",
       "year": 1999,
-      "genre": "Clásico / Literatura",
+      "category": "Clásico",
       "price": 6000,
       "stock": 2,
       "imgUrl": "../images/el-viejo-y-el-mar.jpg",
@@ -15,7 +15,7 @@
       "title": "El Nombre de la Rosa",
       "author": "Umberto Eco",
       "year": 2001,
-      "genre": "Misterio",
+      "category": "Suspenso",
       "price": 4500,
       "stock": 2,
       "imgUrl": "../images/en-el-nombre-de-la-rosa.jpg",
@@ -27,7 +27,7 @@
       "title": "El Arte De La Guerra",
       "author": "Sun Tzu",
       "year": 1990,
-      "genre": "Estretégia",
+      "category": "Estratégia",
       "price": 2700,
       "stock": 2,
       "imgUrl": "../images/el-arte-de-la-guerra.jpg",
@@ -39,11 +39,35 @@
       "title": "El Alquimista",
       "author": "Paulo Coelho",
       "year": 2002,
-      "genre": "Ficción",
+      "category": "Clásico",
       "price": 4100,
       "stock": 2,
       "imgUrl": "../images/el-alquimista.jpg",
       "resumen": "Poderosa, sencilla, sabia e inspiradora, ésta es la historia de Santiago, un joven pastor andaluz que viaja desde su tierra natal hacia el desierto egipcio en busca de un tesoro oculto en las pirámides. Nadie sabe lo que contiene el tesoro, ni si Santiago será capaz de superar los obstáculos del camino. Pero lo que comienza como un viaje en busca de riquezas se convierte en un descubrimiento del tesoro interior."
+    },
+
+    {
+      "id": 5,
+      "title": "El Psicoanalista",
+      "author": "John Katzenbach",
+      "year": 2015,
+      "category": "Suspenso",
+      "price": 7100,
+      "stock": 2,
+      "imgUrl": "../images/el-psicoanalista.jpg",
+      "resumen": "Feliz aniversario, doctor. Bienvenido al primer día de su muerte. Así comienza el anónimo que recibe el psicoanalista Frederick Starks."
+    },
+
+    {
+      "id": 6,
+      "title": "Cuento de Hadas",
+      "author": "Stephen King",
+      "year": 2002,
+      "category": "Terror",
+      "price": 4100,
+      "stock": 2,
+      "imgUrl": "../images/cuento-de-hada.jpg",
+      "resumen": "Charlie Reade parece un estudiante de instituto normal y corriente, pero carga con un gran peso sobre los hombros."
     }
 
   ]

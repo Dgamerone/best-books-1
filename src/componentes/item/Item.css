@@ -2,7 +2,7 @@
   padding: 20px 15px;
   display: flex;
   justify-content: space-around;
-  width: 60%;
+  width: 80%;
   align-items: center;
   flex-wrap: wrap;
   margin: 5px;
@@ -17,20 +17,19 @@
   align-items: center;
   flex-direction: column;
   width: 100%;
-  border-radius: 15px;
+  height: auto;
+  border-radius: 20px;
   padding-bottom: 15px;
-  background-color: #fff;
-  box-shadow: -1px 5px 10px 1px rgba(0, 0, 0, 0.75);
+  background: rgb(255, 255, 255);
   overflow: hidden;
+  transition: 1s ease-in-out;
 }
 
 .corazonContainer {
-  background: #036df7;
-  background: -webkit-linear-gradient(to right, #010007, #e6e6c9);
-  background: linear-gradient(to right, #01000c, #ffffff);
+  background: #ffffff;
   width: 100%;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   padding: 10px;
 }
 
@@ -38,11 +37,8 @@
   border-radius: 100px;
   height: 30px;
   width: 30px;
-  border-radius: 100px;
-  height: 30px;
-  width: 30px;
-  border: 2px solid #8a8987;
-  background-color: #fafafa;
+  border: 1px;
+  background: #fafafa;
   color: rgb(20, 20, 20);
 }
 
@@ -50,39 +46,39 @@
   border-radius: 100px;
   height: 30px;
   width: 30px;
-  border-radius: 100px;
-  height: 30px;
-  width: 30px;
   background-color: #fafafa;
   color: red;
-  border: 2px solid #df0a1c;
+  border: 2px solid red;
 }
 
 .containerImgText {
   width: 100%;
-  background: #f90404;
-  background: -webkit-linear-gradient(to right, #d4d3dd, #e6e6c9);
-  background: linear-gradient(to right, #d4d3dd, #e6e6c9);
+  background: #f0f0f0;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   padding-top: 15px;
+  position: relative;
+  padding-top: 1px;
 }
 
 .titleCard {
   width: 100%;
   text-align: center;
   font-family: sans-serif;
-  font-weight: bold;
 }
 
 h2 {
-  color: #000000;
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: bold;
+  background: #000000;
+  padding: 10px;
 }
 
 .imgCard {
-  width: 100%;
+  width: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -90,8 +86,9 @@ h2 {
 }
 
 img {
-  width: 100%;
+  width: 80%;
   transition: 1s ease-in-out;
+  position: relative;
 }
 
 .containerDetailsCard {
@@ -132,5 +129,18 @@ h4 {
   transform: scale(1.1);
 }
 
-@media screen and (max) {
+.card:hover {
+  transform: scale(1.1);
+  box-shadow: -1px 5px 10px 1px rgba(0, 0, 0, 0.75);
+}
+
+button.Corazon:hover {
+  border: 1px solid #0a0a0a;
+  background: #000000;
+  color: #fafafa;
+}
+
+button.Click:hover {
+  background: black;
+  color: red;
 }

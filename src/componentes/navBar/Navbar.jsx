@@ -1,13 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import CartWidget from "./CartWidget2/CartWidget";
+import CartWidget from "../CartWidget/CartWidget";
+import "./navBar.css"
 
 
 const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
       <div className="container-fluid">
-        <Link className="navbar-brand active" to="logo">
+        <Link className="navbar-brand active" to="/">
           Best Books
         </Link>
         <buttons
@@ -26,15 +27,23 @@ const Navbar = () => {
             <Link className="nav-link active" aria-current="page" to="/">
               Inicio
             </Link>
-            <Link className="nav-link" to="/libros">
-              Libros
+            <Link className="nav-link" to={'/category/clásico'}>
+              Clásico
+            </Link>
+            <Link className="nav-link" to={'/category/suspenso'}>
+              Suspenso
+            </Link>
+            <Link className="nav-link" to={'/category/estratégia'}>
+              Estratégia
+            </Link>
+            <Link className="nav-link" to={'/category/terror'}>
+              Terror
             </Link>
             <Link className="nav-link" to="/contacto">
               Contacto
             </Link>
-            <Link className="nav-link" to="/carrito">
+            <Link className="cart nav-link" to="/cart">
               <CartWidget />
-              Carrito
             </Link>
           </div>
         </div>
