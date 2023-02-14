@@ -27,16 +27,16 @@ const Navbar = () => {
             <Link className="nav-link active" aria-current="page" to="/">
               Inicio
             </Link>
-            <Link className="nav-link" to={'/category/clásico'}>
+            <Link className="nav-link" to={'/category/Clásico'}>
               Clásico
             </Link>
-            <Link className="nav-link" to={'/category/suspenso'}>
+            <Link className="nav-link" to={'/category/Suspenso'}>
               Suspenso
             </Link>
-            <Link className="nav-link" to={'/category/estratégia'}>
+            <Link className="nav-link" to={'/category/Estratégia'}>
               Estratégia
             </Link>
-            <Link className="nav-link" to={'/category/terror'}>
+            <Link className="nav-link" to={'/category/Terror'}>
               Terror
             </Link>
             <Link className="nav-link" to="/contacto">

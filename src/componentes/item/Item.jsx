@@ -1,11 +1,11 @@
 import ButtonUniversal from "../ButtonUniversal/ButtonUniversal";
 import './Item.css';
-import React from 'react';
-import { useState } from 'react';
+import React, {useState} from 'react';
+// import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-
-export default function ItemList({ title, author, year, price, category, id, imgUrl, resumen, stock }) {
+// Borre de esta linea de abajo la palabra ItemList y solo deje Item
+export default function Item({ title, author, year, price, category, id, imgUrl, resumen, stock }) {
 
 
     const [buttonChange, setButtonChange] = useState("Corazon");

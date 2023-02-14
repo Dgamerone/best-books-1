@@ -13,4 +13,5 @@ const Saludo = ({saludos}) => {
   )
 }
 
+
 export default Saludo

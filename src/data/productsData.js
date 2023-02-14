@@ -1,4 +1,4 @@
-const productos = [
+const databaseItems = [
   {
     id: "1",
     title: "El Viejo y El Mar",
@@ -9,7 +9,7 @@ const productos = [
     stock: 2,
     imgUrl: "../images/el-viejo-y-el-mar.jpg",
     resumen:
-      "Santiago es un viejo pescador cubano que ya lleva ochenta y cuatro días sin coger un solo pescado. Sólo tiene un amigo, el joven Manolin su aprendiz, a quien sus padres sin embargo fuerzan a que dejen de ir con el viejo Santiago porque dicen: ya no tiene suerte.Sin embargo Manolin sigue ayudando a su amigo Santiago todos los días cuando llega de su infructuosa pesca.En el día que hace ochenta y cinco Santiago sale con su pequeño esquife y se adentra en el mar, alejándose de las aguas costeras. Entrando ya en la corriente del Golfo, prepara los sedales y tras haber conseguido carnaza los deja que desciendan casi cien brazas. A mediodía siente que ha picado un gran pez y está seguro de que es un hermoso pez espada. Usando de la experiencia de toda una vida comienza una lucha entre Santiago y el pez que dura cerca de tres días.Santiago es la personificación de la lucha contra el fracaso. Nunca se da por vencido. Deberíamos aprender de el.",
+      "Santiago es un viejo pescador cubano que ya lleva ochenta y cuatro días sin coger un solo pescado. Sólo tiene un amigo, el joven Manolin su aprendiz, a quien sus padres sin embargo fuerzan a que dejen de ir con el viejo Santiago porque dicen: ya no tiene suerte.Sin embargo Manolin sigue ayudando a su amigo Santiago todos los días cuando llega de su infructuosa pesca.En el día que hace ochenta y cinco Santiago sale con su pequeño esquife y se adentra en el mar, alejándose de las aguas costeras.",
   },
   {
     id: "2",
@@ -51,7 +51,7 @@ const productos = [
   },
 
   {
-    id: 5,
+    id: "5",
     title: "El Psicoanalista",
     author: "John Katzenbach",
     year: 2015,
@@ -64,7 +64,7 @@ const productos = [
   },
 
   {
-    id: 6,
+    id: "6",
     title: "Cuento de Hadas",
     author: "Stephen King",
     year: 2002,
@@ -78,34 +78,37 @@ const productos = [
 ];
 
 function getItems() {
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
+    // reject("error")
+    // Este rejet si lo activo me oculta los libros del inicio
     setTimeout(() => {
-      resolve(productos);
+      resolve(databaseItems);
     }, 1);
   });
 }
 
-export function getProductsDetails(itemid) {
-  let productosArray = productos.find((idProduct) => {
-    return idProduct.id === itemid;
+export function getSingleItem(itemid) {
+  // Usamos el find para encontrar el producto deseado (como un tipo filtro)
+  let itemReq = databaseItems.find((item) => {
+    return item.id === itemid;
   });
-  console.log(productosArray);
 
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     setTimeout(() => {
-      resolve(productosArray);
+      if (itemReq !== undefined) resolve(itemReq);
+      else reject("Libro no encontrado");
     }, 1);
   });
 }
 
-export function getProductsCategory(categoryid) {
-  let categoriaArray = productos.filter((categoryProduct) => {
-    return categoryProduct.category === categoryid;
-  });
+export function getItemsByCategory(categoryid) {
+  let itemsCategory = databaseItems.filter(
+    (item) => item.category === categoryid
+  );
 
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     setTimeout(() => {
-      resolve(categoriaArray);
+      resolve(itemsCategory);
     }, 1);
   });
 }

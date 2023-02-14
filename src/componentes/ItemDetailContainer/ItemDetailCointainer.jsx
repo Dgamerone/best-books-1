@@ -1,28 +1,32 @@
 import { useState, useEffect } from 'react';
 import './itemDetailContainer.css';
 import ItemCount from '../itemCount/ItemCount';
-import { getProductsDetails } from "../../data/productsData.js";
+import { getSingleItem } from "../../data/productsData.js";
 import { useParams } from 'react-router-dom';
 import swal from "sweetalert";
 
 
 export default function ItemDetailContainer() {
-    const [productos, setProductos] = useState([])
+    const [product, setProduct] = useState([])
     const [loading, setLoading] = useState(true)
+
+    // Se obtiene el valor de la URL con useParams
     let { itemid } = useParams();
 
     const onAddToCart = (click) =>{
         swal(`Agregado al Carrito`,
-            `${productos.title}`,
+            `${product.title}`,
             "success",
         );
     }
     useEffect(() => {
-        getProductsDetails(itemid).then((response) => {
-            setProductos(response)
+        // Pasamos por parametro al productsData
+        getSingleItem(itemid).then((response) => {
+            setProduct(response)
         }).finally(() => {
             setLoading(false)
         })
+        .catch((error) => alert(`Error: ${error}`))
     }, [itemid])
 
     if (loading) {
@@ -33,33 +37,33 @@ export default function ItemDetailContainer() {
         <div className="containerDetail">
             <div className='details'>
                 <div className='imageDetail'>
-                    <img src={productos.imgUrl} alt="" />
+                    <img src={product.imgUrl} alt="" />
                 </div>
                 <div className='textDetails'>
                     <div className='nameProduct'>
-                        <h3>{productos.title}</h3>
+                        <h3>{product.title}</h3>
                     </div>
                     <div className='valueProduct'>
-                        <h5>${productos.price}</h5>
+                        <h5>${product.price}</h5>
                     </div>
                     <div>
-                        <h6>{productos.author}</h6>
+                        <h6>{product.author}</h6>
                     </div>
                     <div className='categoryProduct'>
-                        <spam>{productos.category}</spam>
+                        <spam>{product.category}</spam>
                     </div>
                     <div className='year'>
                         <p>Año</p>
-                        <span>{productos.year}</span>
+                        <span>{product.year}</span>
                     </div>
                     <div className='stock'>
                         <p>Stock</p>
-                        <span>{productos.stock}</span>
+                        <span>{product.stock}</span>
                     </div>
                     
                     <div className='resumen'>
                         <p>Resumen</p>
-                       <spam>{productos.resumen}</spam>
+                        <spam>{product.resumen}</spam>
                     </div>
 
                     <div className="buttons">
