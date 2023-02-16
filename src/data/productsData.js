@@ -83,7 +83,7 @@ function getItems() {
     // Este rejet si lo activo me oculta los libros del inicio
     setTimeout(() => {
       resolve(databaseItems);
-    }, 1);
+    }, 2000);
   });
 }
 
@@ -97,7 +97,7 @@ export function getSingleItem(itemid) {
     setTimeout(() => {
       if (itemReq !== undefined) resolve(itemReq);
       else reject("Libro no encontrado");
-    }, 1);
+    }, 2000);
   });
 }
 
@@ -109,7 +109,7 @@ export function getItemsByCategory(categoryid) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(itemsCategory);
-    }, 1);
+    }, 2000);
   });
 }
 

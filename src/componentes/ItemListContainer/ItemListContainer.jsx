@@ -4,10 +4,12 @@ import "./itemListContainer.css";
 import getItems, {getItemsByCategory} from "../../data/productsData";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Loader from "../loader/Loader";
 
 
 export default function ItemListContainer() {
-    const [products, setProducts] = useState([])
+    const [products, setProducts] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     let { categoryid } = useParams();
 
@@ -16,31 +18,34 @@ export default function ItemListContainer() {
     async function getProducts() {
         if(!categoryid ) {
             try {
-                let response = await getItems()
-                setProducts(response);
+              let response = await getItems();
+              setProducts(response);
             } catch (error) {
-                alert(error);
+              alert(error);
+            } finally{
+                setIsLoading(false);
             }
         }
         else{
             let response = await getItemsByCategory(categoryid);
             setProducts(response);
+            setIsLoading(false);
         }
 
     }
 
     useEffect(() =>{
         getProducts();
-        } ,[categoryid])
+        }, [categoryid])
 
+    // if (products.length === 0) {
+    //     return categoryid ? <h1>No hay libros en nuestra categoria {categoryid}</h1> : <h1>No hay libros disponibles</h1>
+    // }
 
-    if (products.length === 0) {
-        return categoryid ? <h1>No hay libros en nuestra categoria {categoryid}</h1> : <h1>No hay libros disponibles</h1>
-    }
-
-
+    if (isLoading) return <Loader/>
 
     return (
+        
         // Este DIV posiblemente se borre (creo que no esta haciendo nada) y solo quede el ItemList 
         <div className="containerList"> 
             <ItemList products={products} {...products} />
@@ -48,24 +53,6 @@ export default function ItemListContainer() {
     )
 }
 
-
-
-
-    // useEffect( () =>{
-    //     if(categoryid ){
-    //         getItemsByCategory(categoryid ).then((respuesta) => {
-    //             setProducts(respuesta);
-    //         });
-    //     }
-
-    //     else
-    //     {
-    //         getItems().then((respuesta) => {
-    //             console.log(respuesta);
-    //             setProducts(respuesta);
-    //         });
-    //     }
-    // }, [categoryid ]);
 
 
 

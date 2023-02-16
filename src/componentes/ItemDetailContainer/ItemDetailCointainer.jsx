@@ -1,24 +1,36 @@
 import { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 import './itemDetailContainer.css';
 import ItemCount from '../itemCount/ItemCount';
 import { getSingleItem } from "../../data/productsData.js";
 import { useParams } from 'react-router-dom';
 import swal from "sweetalert";
+import { useContext } from 'react';
+import { cartContext } from '../../storage/cartContext';
 
 
 export default function ItemDetailContainer() {
     const [product, setProduct] = useState([])
     const [loading, setLoading] = useState(true)
-
+    const [isInCart, setIsInCart] = useState(false)
     // Se obtiene el valor de la URL con useParams
     let { itemid } = useParams();
 
-    const onAddToCart = (click) =>{
+
+   const {addItem, removeItem, } = useContext(cartContext);
+
+
+    const handleToCart = (count) =>{
+
+        setIsInCart(true);
+
         swal(`Agregado al Carrito`,
-            `${product.title}`,
-            "success",
+        `${count} - ${product.title}`,
+        "success",
         );
+        addItem({...product, count:count});
     }
+
     useEffect(() => {
         // Pasamos por parametro al productsData
         getSingleItem(itemid).then((response) => {
@@ -30,7 +42,7 @@ export default function ItemDetailContainer() {
     }, [itemid])
 
     if (loading) {
-        return <h1 className='loading'>Cargando...</h1>
+        return <span className="loader"></span>
     }
 
     return (
@@ -66,9 +78,14 @@ export default function ItemDetailContainer() {
                         <spam>{product.resumen}</spam>
                     </div>
 
-                    <div className="buttons">
-                        <ItemCount onAdd={onAddToCart} />
-                    </div>
+                    
+                    <ItemCount onAddToCart={handleToCart} />
+
+                    <Link to="/cart">
+                        <button onClick={removeItem}>Ir al Carrito</button>
+                    </Link>
+                    <button onClick={() => removeItem (product.id)}>Eliminar Item</button>
+                    <button onClick={removeItem}>Vaciar Carrito</button>
                 </div>
             </div>
 

@@ -1,3 +1,4 @@
+// import {createContext} from "react";
 import "./App.css";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Navbar from "./componentes/navBar/Navbar";
@@ -8,6 +9,10 @@ import { Footer } from "./componentes/footer/Footer.jsx";
 import ItemListContainer from "./componentes/itemListContainer/ItemListContainer";
 import ItemDetailContainer from "./componentes/itemDetailContainer/ItemDetailCointainer";
 
+import {CartContextProvider} from "./storage/cartContext";
+import CartContainer from "./componentes/cartContainer/CartContainer";
+
+
 function App() {
   const saludos = {
     mensaje: "Bienvenidos al mundo de las letras.",
@@ -16,24 +21,26 @@ function App() {
 
   return (
     <div className="App">
-      <Saludo saludos={saludos} />
+        <CartContextProvider>    
+        <Saludo saludos={saludos} />
 
-      <BrowserRouter>
-        <Navbar />
-        <Banner />
-        <hr />
-        <Routes>
-          <Route path="/" element={<ItemListContainer />} />
-          <Route path="/item/:itemid" element={<ItemDetailContainer />} />
-          <Route path="/category/:categoryid" element={<ItemListContainer />} />
-          <Route path="/contacto" element={<Contacto />} />
-          {/* <Route path="/cart" element={<Carrito />} /> */}
-          <Route path="*" element={<h1> 404: Page not found </h1>} />
-        </Routes>
-      </BrowserRouter>
+        <BrowserRouter>
+          <Navbar />
+          <Banner />
+          <hr />
+          <Routes>
+            <Route path="/" element={<ItemListContainer />} />
+            <Route path="/item/:itemid" element={<ItemDetailContainer />} />
+            <Route path="/category/:categoryid" element={<ItemListContainer />} />
+            <Route path="/contacto" element={<Contacto />} />
+            <Route path="/cart" element={<CartContainer/>} />
+            <Route path="*" element={<h1> 404: Page not found </h1>} />
+          </Routes>
+        </BrowserRouter>
 
-      <Footer />
-    </div>
+        <Footer />
+        </CartContextProvider>
+      </div>
   );
 }
 
