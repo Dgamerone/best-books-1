@@ -6,16 +6,11 @@ export function CartContextProvider(props){
     let [cart, setCart] = useState([]);
 
     function addItem(item) {
+        // let newCart = [...cart]
+        // newCart.push(item);
+        // setCart(newCart)
 
-        let cartAdd = cart.map(item => item);
-        let pro = cart.find(pro => pro.id === item.id);
-        if (pro) {
-            pro.count += item.count;
-        } else {
-            cartAdd.push(item);
-        }
-
-        setCart([...cart, item, cartAdd]);
+        setCart([...cart, item])
         }
 
     
@@ -34,11 +29,12 @@ export function CartContextProvider(props){
         setCart([])        
     }
 
-
     function getTotalItems( ) {
 
-        let getTotalItems = cart.reduce((acum, pro) => acum + pro.count, 0);
-        return getTotalItems;
+        let total = 0;
+        cart.forEach((item) => (total += 1));
+        return total;
+
     }
 
     function getTotalCart( ) {

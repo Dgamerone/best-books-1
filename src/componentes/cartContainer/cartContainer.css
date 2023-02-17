@@ -1,0 +1,10 @@
+.cart-item{
+    display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+  }
+  
+  .cart-item img{
+    width: 50px;
+  
+  }

@@ -5,14 +5,15 @@ import "./cartWidget.css";
 
 export default function CartWidget() {
   const {getTotalItems} = useContext(cartContext)
+
   return (
-    <div className="container-widget">
+    <li className="container-widget">
       <div className="widget">
         <img src={Cart} alt="Carrito" />
       </div>
       <div className="counter">
-        <p>{getTotalItems()}</p>
+        <span>{getTotalItems()}</span>
       </div>
-    </div>
+    </li>
   );
 }

@@ -1,4 +1,4 @@
-// import {createContext} from "react";
+import { createContext, useContext } from "react";
 import "./App.css";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Navbar from "./componentes/navBar/Navbar";
@@ -11,6 +11,7 @@ import ItemDetailContainer from "./componentes/itemDetailContainer/ItemDetailCoi
 
 import {CartContextProvider} from "./storage/cartContext";
 import CartContainer from "./componentes/cartContainer/CartContainer";
+import { testApp } from "./data/firebase";
 
 
 function App() {
@@ -18,6 +19,8 @@ function App() {
     mensaje: "Bienvenidos al mundo de las letras.",
     promocion: "10% off en Efectivo",
   };
+
+  testApp();
 
   return (
     <div className="App">
@@ -37,7 +40,6 @@ function App() {
             <Route path="*" element={<h1> 404: Page not found </h1>} />
           </Routes>
         </BrowserRouter>
-
         <Footer />
         </CartContextProvider>
       </div>
