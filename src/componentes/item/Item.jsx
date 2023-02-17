@@ -1,4 +1,4 @@
-import ButtonUniversal from "../ButtonUniversal/ButtonUniversal";
+import ButtonUniversal from "../buttonUniversal2/ButtonUniversal";
 import './item.css';
 import React, {useState} from 'react';
 // import { useState } from 'react';
