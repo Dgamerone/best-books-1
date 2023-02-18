@@ -1,7 +1,8 @@
 import ItemList from "../itemList/ItemList";
 import "./itemListContainer.css";
 // import Item from "../item/Item";
-import getItems, {getItemsByCategory} from "../../data/productsData";
+import {getItemsByCategory} from "../../data/firebase";
+import {getItems, getItemsPromise} from "../../data/firebase";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Loader from "../loader/Loader";
@@ -18,7 +19,7 @@ export default function ItemListContainer() {
     async function getProducts() {
         if(!categoryid ) {
             try {
-              let response = await getItems();
+              let response = await getItemsPromise();
               setProducts(response);
             } catch (error) {
               alert(error);

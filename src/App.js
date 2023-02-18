@@ -11,7 +11,7 @@ import ItemDetailContainer from "./componentes/itemDetailContainer/ItemDetailCoi
 
 import {CartContextProvider} from "./storage/cartContext";
 import CartContainer from "./componentes/cartContainer/CartContainer";
-import { testApp } from "./data/firebase";
+import { getItems, getItemsByCategory, getSingleItem, testApp } from "./data/firebase";
 
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
     promocion: "10% off en Efectivo",
   };
 
-  testApp();
+  getItemsByCategory("Clásico");
 
   return (
     <div className="App">

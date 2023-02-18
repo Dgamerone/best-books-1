@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import './itemDetailContainer.css';
 import ItemCount from '../itemCount/ItemCount';
-import { getSingleItem } from "../../data/productsData.js";
+import { getSingleItem } from "../../data/firebase";
 import { useParams } from 'react-router-dom';
 import swal from "sweetalert";
 import { useContext } from 'react';
@@ -21,9 +21,7 @@ export default function ItemDetailContainer() {
 
 
     const handleToCart = (count) =>{
-
         setIsInCart(true);
-
         swal(`Agregado al Carrito`,
         `${count} - ${product.title}`,
         "success",
