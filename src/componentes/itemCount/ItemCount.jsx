@@ -2,10 +2,11 @@ import { useState } from "react";
 import './itemCount.css';
 
 
-export default function ItemCount({onAddToCart}) {
+export default function ItemCount({onAddToCart, stock}) {
     const [count, setCount] = useState(0);
 
     function sumClick() {
+        if(count < stock)
         setCount(count + 1)
     }
 
@@ -22,7 +23,7 @@ export default function ItemCount({onAddToCart}) {
             </div>
 
             <div className="compra">
-                <button onClick={()=> onAddToCart(count)}>Agregar</button>
+                <button className="buttonCount" onClick={()=> onAddToCart(count)}>Agregar</button>
             </div>
         </div>
     )

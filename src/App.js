@@ -9,9 +9,11 @@ import { Footer } from "./componentes/footer/Footer.jsx";
 import ItemListContainer from "./componentes/itemListContainer/ItemListContainer";
 import ItemDetailContainer from "./componentes/itemDetailContainer/ItemDetailCointainer";
 
-import {CartContextProvider} from "./storage/cartContext";
+import { CartContextProvider } from "./storage/cartContext";
 import CartContainer from "./componentes/cartContainer/CartContainer";
-import { getItems, getItemsByCategory, getSingleItem, testApp } from "./data/firebase";
+import {exportData, exportDataWithBatch, getItemsByCategory} from "./data/firebase";
+
+import OrderDetail from "./componentes/orderDetails/OrderDetail";
 
 
 function App() {
@@ -20,11 +22,10 @@ function App() {
     promocion: "10% off en Efectivo",
   };
 
-  getItemsByCategory("Clásico");
-
   return (
     <div className="App">
-        <CartContextProvider>    
+      <CartContextProvider>
+        {/* <button onClick={exportDataWithBatch}>Export Data</button> */}
         <Saludo saludos={saludos} />
 
         <BrowserRouter>
@@ -34,15 +35,20 @@ function App() {
           <Routes>
             <Route path="/" element={<ItemListContainer />} />
             <Route path="/item/:itemid" element={<ItemDetailContainer />} />
-            <Route path="/category/:categoryid" element={<ItemListContainer />} />
+            <Route
+              path="/category/:categoryid"
+              element={<ItemListContainer/>}
+            />
+            
             <Route path="/contacto" element={<Contacto />} />
-            <Route path="/cart" element={<CartContainer/>} />
+            <Route path="/cart" element={<CartContainer />} />
+            <Route path="/my-order/:orderid" element={<OrderDetail />} />
             <Route path="*" element={<h1> 404: Page not found </h1>} />
           </Routes>
         </BrowserRouter>
         <Footer />
-        </CartContextProvider>
-      </div>
+      </CartContextProvider>
+    </div>
   );
 }
 

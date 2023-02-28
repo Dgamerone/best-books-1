@@ -7,6 +7,7 @@ import { useParams } from 'react-router-dom';
 import swal from "sweetalert";
 import { useContext } from 'react';
 import { cartContext } from '../../storage/cartContext';
+import './itemDetailContainer.css'; 
 
 
 export default function ItemDetailContainer() {
@@ -17,7 +18,16 @@ export default function ItemDetailContainer() {
     let { itemid } = useParams();
 
 
-   const {addItem, removeItem, } = useContext(cartContext);
+   const {cart, addItem, removeItem, } = useContext(cartContext);
+
+   const itemInCart = cart.find(item=> item.id === product.id)
+
+   let stockUpdate;
+
+   if(itemInCart)
+    stockUpdate = product.stock - itemInCart.count;
+    else
+    stockUpdate = product.stock;
 
 
     const handleToCart = (count) =>{
@@ -66,10 +76,10 @@ export default function ItemDetailContainer() {
                         <p>Año</p>
                         <span>{product.year}</span>
                     </div>
-                    <div className='stock'>
+                    {/* <div className='stock'>
                         <p>Stock</p>
                         <span>{product.stock}</span>
-                    </div>
+                    </div> */}
                     
                     <div className='resumen'>
                         <p>Resumen</p>
@@ -77,13 +87,14 @@ export default function ItemDetailContainer() {
                     </div>
 
                     
-                    <ItemCount onAddToCart={handleToCart} />
-
-                    <Link to="/cart">
-                        <button onClick={removeItem}>Ir al Carrito</button>
-                    </Link>
-                    <button onClick={() => removeItem (product.id)}>Eliminar Item</button>
-                    <button onClick={removeItem}>Vaciar Carrito</button>
+                    <ItemCount stock={stockUpdate} onAddToCart={handleToCart} />
+                    <div className='buttonsDetail'>
+                        <Link to="/cart">
+                            <button className='buttonDetail' onClick={removeItem}>Ir al Carrito</button>
+                        </Link>
+                        <button className='buttonDetail'onClick={() => removeItem (product.id)}>Eliminar Item</button>
+                        <button className='buttonDetail'onClick={removeItem}>Vaciar Carrito</button>
+                    </div>
                 </div>
             </div>
 
